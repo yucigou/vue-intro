@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <h1>Vue.js Web Apps</h1>
     <router-view/>
+    <div class="pv4">
+      <router-link to="/">Home</router-link>
+    </div>
   </div>
 </template>
 
@@ -12,12 +15,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

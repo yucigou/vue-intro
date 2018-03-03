@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Meal from '@/components/Meal'
+import Counter from '@/components/Counter'
+import CalorieCalculator from '@/components/CalorieCalculator'
 
 Vue.use(Router)
 
@@ -10,6 +13,21 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/meal',
+      name: 'Meal',
+      component: Meal
+    },
+    {
+      path: '/counter',
+      name: 'Counter',
+      component: Counter
+    },
+    {
+      path: '/calorie-calculator',
+      name: 'CalorieCalculator',
+      component: CalorieCalculator
     }
   ]
 })
