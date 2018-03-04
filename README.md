@@ -1,9 +1,11 @@
 # Create the project
+``` bash
 vue init webpack vue-intro
+```
 
 # vue-intro
 
-> A Vue.js project
+Small Vue.js web applicatons
 
 ## Build Setup
 
