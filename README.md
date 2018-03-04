@@ -31,3 +31,6 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# Firebase support
+In order to run applications based on Firebase, you need to first [register your application](https://console.firebase.google.com/) and update the configuration file src/firebase.js
