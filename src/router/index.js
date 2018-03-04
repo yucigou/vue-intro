@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Meal from '@/components/Meal'
 import Counter from '@/components/Counter'
 import CalorieCalculator from '@/components/CalorieCalculator'
+import FirebaseCalorieCalculator from '@/components/FirebaseCalorieCalculator'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/calorie-calculator',
       name: 'CalorieCalculator',
       component: CalorieCalculator
+    },
+    {
+      path: '/firebase-calorie-calculator',
+      name: 'FirebaseCalorieCalculator',
+      component: FirebaseCalorieCalculator
     }
   ]
 })
