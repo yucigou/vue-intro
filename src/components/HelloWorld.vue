@@ -6,6 +6,8 @@
       <li><router-link to="/counter">Simple Counter</router-link></li>
       <li><router-link to="/calorie-calculator">Calorie Calculator</router-link></li>
       <li><router-link to="/firebase-calorie-calculator">Firebase Calorie Calculator</router-link></li>
+      <li><router-link to="/auth">Login</router-link></li>
+      <li><router-link to="/success">Welcome</router-link></li>
     </ul>
   </div>
 </template>

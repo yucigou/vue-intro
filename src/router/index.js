@@ -6,6 +6,9 @@ import Counter from '@/components/Counter'
 import CalorieCalculator from '@/components/CalorieCalculator'
 import FirebaseCalorieCalculator from '@/components/FirebaseCalorieCalculator'
 
+import Auth from '@/components/Auth.vue';
+import AuthSuccess from '@/components/AuthSuccess.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +37,14 @@ export default new Router({
       path: '/firebase-calorie-calculator',
       name: 'FirebaseCalorieCalculator',
       component: FirebaseCalorieCalculator
+    },
+    {
+      path: '/auth',
+      component: Auth
+    },
+    {
+      path: '/success',
+      component: AuthSuccess
     }
   ]
 })
