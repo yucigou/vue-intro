@@ -17,9 +17,11 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>',
-  created () {
+  created() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.$router.push('/success')

@@ -49,7 +49,7 @@
 <script>
 export default {
   name: "Meal",
-  data () {
+  data() {
     return {
       showForm: false,
       meal: "",
@@ -63,30 +63,33 @@ export default {
       ]
     };
   },
-  created () {
+  created() {
     this.CONSTANTS = {
       MODE: {
-        ADD: 'Add',
-        EDIT: 'Edit'
+        ADD: "Add",
+        EDIT: "Edit"
       }
     };
-    Object.defineProperty(this, "CONSTANTS", { configurable: false, writable: false });
+    Object.defineProperty(this, "CONSTANTS", {
+      configurable: false,
+      writable: false
+    });
     this.mode = this.CONSTANTS.MODE.ADD;
   },
   computed: {
-    total: function () {
+    total: function() {
       return this.meals
         .map(meal => meal.calories)
-        .reduce((acc, calories) => acc + calories, 0)
+        .reduce((acc, calories) => acc + calories, 0);
     }
   },
   methods: {
-    showAddForm: function () {
+    showAddForm: function() {
       this.errors = [];
       this.mode = this.CONSTANTS.MODE.ADD;
       this.showForm = true;
     },
-    save: function () {
+    save: function() {
       if (!this.checkForm()) {
         return;
       }
@@ -97,7 +100,7 @@ export default {
         case this.CONSTANTS.MODE.EDIT:
           this.meals = this.meals.map(meal => {
             if (meal.description.toUpperCase() === this.meal.toUpperCase()) {
-              return {description: this.meal, calories: this.calories};
+              return { description: this.meal, calories: this.calories };
             } else {
               return meal;
             }
@@ -105,39 +108,46 @@ export default {
           break;
 
         default:
-          let duplicated = this.meals.some(meal => meal.description.toUpperCase() === this.meal.toUpperCase());
+          let duplicated = this.meals.some(
+            meal => meal.description.toUpperCase() === this.meal.toUpperCase()
+          );
           if (duplicated) {
             this.errors = [`Meal ${this.meal} already exists`];
           } else {
-            this.meals.push({ description: this.meal, calories: this.calories })
+            this.meals.push({
+              description: this.meal,
+              calories: this.calories
+            });
           }
       }
     },
-    checkForm: function () {
-      this.errors = []
+    checkForm: function() {
+      this.errors = [];
       if (this.meal && this.calories) {
-        return true
+        return true;
       }
       if (!this.meal) {
-        this.errors.push('Meal required.')
+        this.errors.push("Meal required.");
       }
       if (!this.calories) {
-        this.errors.push('Calories required.')
+        this.errors.push("Calories required.");
       }
     },
-    deleteMeal: function (description) {
+    deleteMeal: function(description) {
       console.log(description);
       this.meals = this.meals.filter(meal => meal.description !== description);
     },
-    editMeal: function (description) {
-      const theMeal = this.meals.filter(meal => meal.description === description);
+    editMeal: function(description) {
+      const theMeal = this.meals.filter(
+        meal => meal.description === description
+      );
       this.meal = theMeal[0].description;
       this.calories = theMeal[0].calories;
       this.showForm = true;
       this.mode = this.CONSTANTS.MODE.EDIT;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

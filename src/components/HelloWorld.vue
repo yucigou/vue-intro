@@ -8,21 +8,23 @@
       <li><router-link to="/firebase-calorie-calculator">Firebase Calorie Calculator</router-link></li>
       <li><router-link to="/auth">Login</router-link></li>
       <li><router-link to="/success">Welcome</router-link></li>
+      <li><router-link to="/xslt">XSLT</router-link></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data() {
     return {
-      msg: 'App list:'
-    }
+      msg: "App list:"
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>

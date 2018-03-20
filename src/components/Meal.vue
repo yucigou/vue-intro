@@ -23,23 +23,24 @@
 
 <script>
 export default {
-  name: 'Meal',
-  data () {
+  name: "Meal",
+  data() {
     return {
       meals: [
-        { description: 'Breakfast', calories: 460 },
-        { description: 'Snack', calories: 180 },
-        { description: 'Lunch', calories: 600 }
+        { description: "Breakfast", calories: 460 },
+        { description: "Snack", calories: 180 },
+        { description: "Lunch", calories: 600 }
       ]
-    }
+    };
   },
   computed: {
-    total: function () {
-      return this.meals.map(meal => meal.calories)
-        .reduce((acc, calories) => acc + calories, 0)
+    total: function() {
+      return this.meals
+        .map(meal => meal.calories)
+        .reduce((acc, calories) => acc + calories, 0);
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

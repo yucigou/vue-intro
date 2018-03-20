@@ -11,16 +11,16 @@
 import firebase from "firebase";
 
 export default {
-  data () {
+  data() {
     return {
       name: "",
       email: "",
       user: {}
     };
   },
-  created () {
+  created() {
     let vm = this;
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         vm.user = user;
         vm.name = vm.user.displayName;
@@ -29,7 +29,7 @@ export default {
     });
   },
   methods: {
-    logout () {
+    logout() {
       firebase.auth().signOut();
     }
   }

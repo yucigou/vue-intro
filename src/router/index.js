@@ -9,6 +9,8 @@ import FirebaseCalorieCalculator from '@/components/FirebaseCalorieCalculator'
 import Auth from '@/components/Auth.vue';
 import AuthSuccess from '@/components/AuthSuccess.vue';
 
+import Xslt from '@/components/Xslt.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -45,6 +47,10 @@ export default new Router({
     {
       path: '/success',
       component: AuthSuccess
+    },
+    {
+      path: '/xslt',
+      component: Xslt
     }
   ]
 })

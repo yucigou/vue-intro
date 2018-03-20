@@ -3,12 +3,12 @@ import {
 } from 'firebase';
 
 const app = initializeApp({
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
+  apiKey: "AIzaSyD1TS-CGBjd76ersgXpe-WEuOHfLnO-eOw",
+  authDomain: "calorie-calculator-40678.firebaseapp.com",
+  databaseURL: "https://calorie-calculator-40678.firebaseio.com",
+  projectId: "calorie-calculator-40678",
   storageBucket: "",
-  messagingSenderId: ""
+  messagingSenderId: "433036388378"
 });
 
 export const db = app.database();

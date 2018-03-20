@@ -11,7 +11,7 @@ import firebaseui from "firebaseui";
 
 export default {
   name: "auth",
-  mounted () {
+  mounted() {
     const uiConfig = {
       signInSuccessUrl: "/success",
       signInOptions: [
