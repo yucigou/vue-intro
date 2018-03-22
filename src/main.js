@@ -7,7 +7,7 @@ import router from './router'
 import './firebase';
 import VueFire from 'vuefire';
 
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 Vue.use(VueFire);
 
@@ -22,12 +22,12 @@ new Vue({
   },
   template: '<App/>',
   created() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.$router.push('/success')
-      } else {
-        this.$router.push('/auth')
-      }
-    });
+    // firebase.auth().onAuthStateChanged((user) => {
+    //   if (user) {
+    //     this.$router.push('/success')
+    //   } else {
+    //     this.$router.push('/auth')
+    //   }
+    // })
   }
 })

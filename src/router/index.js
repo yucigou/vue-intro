@@ -10,6 +10,8 @@ import Auth from '@/components/Auth.vue';
 import AuthSuccess from '@/components/AuthSuccess.vue';
 
 import Xslt from '@/components/Xslt.vue';
+import PopupParent from '@/components/PopupParent.vue';
+import PopupChild from '@/components/PopupChild.vue';
 
 Vue.use(Router)
 
@@ -51,6 +53,15 @@ export default new Router({
     {
       path: '/xslt',
       component: Xslt
+    },
+    {
+      path: '/popup-parent',
+      component: PopupParent
+    },
+    {
+      path: '/popup-child',
+      component: PopupChild,
+      name: 'popupChild'
     }
   ]
 })
