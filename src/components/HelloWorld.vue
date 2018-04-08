@@ -10,6 +10,7 @@
       <li><router-link to="/success">Welcome</router-link></li>
       <li><router-link to="/xslt">XSLT</router-link></li>
       <li><router-link to="/popup-parent">Popup Window</router-link></li>
+      <li><router-link to="/country-data">Country Data</router-link></li>
     </ul>
   </div>
 </template>

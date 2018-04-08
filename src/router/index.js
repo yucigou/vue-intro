@@ -13,6 +13,8 @@ import Xslt from '@/components/Xslt.vue';
 import PopupParent from '@/components/PopupParent.vue';
 import PopupChild from '@/components/PopupChild.vue';
 
+import CountryData from '@/components/CountryData.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -62,6 +64,11 @@ export default new Router({
       path: '/popup-child',
       component: PopupChild,
       name: 'popupChild'
+    },
+    {
+      path: '/country-data',
+      component: CountryData,
+      name: 'countryData'
     }
   ]
 })
