@@ -65,7 +65,7 @@ export default {
       this.download("idlist.txt", this.output);
     },
     downloadZip: function() {
-      var zip = new JSZip();
+      let zip = new JSZip();
       zip.file("idlist.txt", this.output);
       zip.generateAsync({type: "blob"}).then(function(content) {
         FileSaver.saveAs(content, "download.zip");
