@@ -11,9 +11,12 @@
 </template>
 
 <script>
+import JSZip from 'jszip';
+import FileSaver from 'file-saver';
 // import * as JSZip from 'jszip';
-let JSZip = require("jszip");
-let FileSaver = require('file-saver');
+// import * as FileSaver from 'file-saver';
+// let JSZip = require("jszip");
+// let FileSaver = require('file-saver');
 
 export default {
   name: "Xslt",
