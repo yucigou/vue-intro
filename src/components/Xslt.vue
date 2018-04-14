@@ -6,10 +6,15 @@
       <textarea id="output" cols="56" rows="10" v-model="output"></textarea>
     </fieldset>
     <button @click="downloadData">Download</button>
+    <button @click="downloadZip">Download Zipped File</button>
   </div>
 </template>
 
 <script>
+// import * as JSZip from 'jszip';
+let JSZip = require("jszip");
+let FileSaver = require('file-saver');
+
 export default {
   name: "Xslt",
   data() {
@@ -55,6 +60,13 @@ export default {
     },
     downloadData: function() {
       this.download("idlist.txt", this.output);
+    },
+    downloadZip: function() {
+      var zip = new JSZip();
+      zip.file("idlist.txt", this.output);
+      zip.generateAsync({type: "blob"}).then(function(content) {
+        FileSaver.saveAs(content, "download.zip");
+      });
     },
     transform: function() {
       let xml = this.loadXMLDoc(this.url);
