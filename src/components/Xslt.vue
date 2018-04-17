@@ -7,12 +7,15 @@
     </fieldset>
     <button @click="downloadData">Download</button>
     <button @click="downloadZip">Download Zipped File</button>
+    <button @click="downloadStreamData">Streamed Download</button>
+    <button @click="downloadStreamZip">Streamed Download Zipped File</button>
   </div>
 </template>
 
 <script>
 import JSZip from 'jszip';
 import FileSaver from 'file-saver';
+import StreamSaver from 'StreamSaver';
 // import * as JSZip from 'jszip';
 // import * as FileSaver from 'file-saver';
 // let JSZip = require("jszip");
@@ -70,6 +73,24 @@ export default {
       zip.generateAsync({type: "blob"}).then(function(content) {
         FileSaver.saveAs(content, "download.zip");
       });
+    },
+    downloadStreamData: function() {
+      console.log('StreamSaver: ', StreamSaver);
+      const fileStream = StreamSaver.createWriteStream('idlist.txt');
+      const writer = fileStream.getWriter();
+
+      const encoder = new TextEncoder();
+      let uint8array = encoder.encode(this.output);
+
+      writer.write(uint8array)
+      writer.close()
+    },
+    downloadStreamZip: function() {
+      // let zip = new JSZip();
+      // zip.file("idlist.txt", this.output);
+      // zip.generateAsync({type: "blob"}).then(function(content) {
+      //   FileSaver.saveAs(content, "download.zip");
+      // });
     },
     transform: function() {
       let xml = this.loadXMLDoc(this.url);
